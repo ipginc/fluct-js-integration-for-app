@@ -32,9 +32,9 @@ class MainActivity : AppCompatActivity() {
                     val adinfo = withContext(Dispatchers.IO) {
                         AdvertisingIdClient.getAdvertisingIdInfo(applicationContext)
                     }
-                    val groupId = "1000123948"
-                    val unitId = "1000214357"
-                    val bundle = BuildConfig.APPLICATION_ID
+                    val groupId = "1000123868"
+                    val unitId = "1000214183"
+                    val bundle = "jp.co.ipg.gguide"
 
                     val js =
                         """
@@ -62,6 +62,6 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
         }
-        webView.loadUrl("https://voyagegroup.github.io/FluctSDK-Hosting/js-sample/android.html")
+        webView.loadUrl("https://firebasestorage.googleapis.com/v0/b/ggmforslack.appspot.com/o/fluctNativeAdHtmlSample.htm?alt=media&token=2e925044-b578-4f2f-af60-a292c389f16b")
     }
 }
