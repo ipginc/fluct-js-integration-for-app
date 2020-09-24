@@ -3,6 +3,7 @@ package jp.fluct.jsintegrationdemo
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -41,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                         var fluctAdScript = fluctAdScript || {};
                         fluctAdScript.cmd = fluctAdScript.cmd || [];
                         fluctAdScript.cmd.push(function (cmd) {
-                          cmd.setConfig({dlvParams: {"ifa":"${adinfo.id}","lmt":${adinfo.isLimitAdTrackingEnabled},"bundle":"$bundle"}});
+                          cmd.setConfig({dlvParams: {"ifa":"${adinfo.id}","lmt":"${if (adinfo.isLimitAdTrackingEnabled) "1" else "0"}","bundle":"$bundle"}});
                           cmd.loadByGroup("$groupId");
                           cmd.display(".fluct-unit-$unitId", "$unitId");
                         });

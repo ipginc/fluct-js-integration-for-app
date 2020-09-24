@@ -39,7 +39,7 @@ extension ViewController: WKNavigationDelegate {
         var fluctAdScript = fluctAdScript || {};
         fluctAdScript.cmd = fluctAdScript.cmd || [];
         fluctAdScript.cmd.push(function (cmd) {
-        cmd.setConfig({dlvParams: {\"ifa\":\"\(idfa)\",\"lmt\":\(lmt),\"bundle\":\"\(bundle)\"}});
+        cmd.setConfig({dlvParams: {\"ifa\":\"\(idfa)\",\"lmt\":\"\(lmt)\",\"bundle\":\"\(bundle)\"}});
         cmd.loadByGroup(\"\(groupId)\");
         cmd.display(\".fluct-unit-\(unitId)\", \"\(unitId)\");
         });
@@ -70,7 +70,7 @@ extension ViewController {
     }
     
     private var lmt: String {
-        return ASIdentifierManager().isAdvertisingTrackingEnabled.description
+        return ASIdentifierManager().isAdvertisingTrackingEnabled ? "0" : "1"
     }
     private var bundle: String {
         return Bundle.main.bundleIdentifier ?? ""
