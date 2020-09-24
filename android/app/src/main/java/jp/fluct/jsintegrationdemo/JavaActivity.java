@@ -46,9 +46,11 @@ public class JavaActivity extends AppCompatActivity {
                 GetAdIdAsyncTask task = new GetAdIdAsyncTask(JavaActivity.this, new Callback() {
                     @Override
                     public void onSuccess(AdvertisingIdClient.Info info) {
-                        String groupId = "1000123948";
-                        String unitId = "1000214357";
-                        String bundle = BuildConfig.APPLICATION_ID;
+                        String groupId = "1000123868";
+                        String unitId = "1000214183";
+//                        String groupId = "1000123948";
+//                        String unitId = "1000214357";
+                        String bundle = "jp.co.ipg.gguide";
 
                         String js =  "var fluctAdScript = fluctAdScript || {};" +
                         "fluctAdScript.cmd = fluctAdScript.cmd || [];" +
@@ -80,7 +82,8 @@ public class JavaActivity extends AppCompatActivity {
                 return true;
             }
         });
-        webView.loadUrl("https://voyagegroup.github.io/FluctSDK-Hosting/js-sample/android.html");
+
+        webView.loadUrl("http://192.168.0.25:8000/fluctNativeAdHtmlSample/fluctNativeAdHtmlSample.htm");
     }
 
     interface Callback {
